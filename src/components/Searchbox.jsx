@@ -10,9 +10,10 @@ import { useSearchParams, useRouter } from 'next/navigation';
 export default function Searchbox() {
 
     const router = useRouter();
+
+    // get the value from HomeSearch input
     const searchParams = useSearchParams();
     const searchTerm = searchParams.get("searchTerm");
-
     const [term, setTerm] = useState(searchTerm || "");
 
     const handleSubmit = (e) => {
