@@ -3,14 +3,15 @@ import Link from "next/link";
 
 export default async function WebSearchPage({searchParams}) {
   
-  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}'}`);
+  const startIndex = searchParams.start || '10';
+
+
+  const response = await fetch(
+    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&start=${startIndex}`
+    );
   const data = await response.json();
   const results = data.items;
   
-
- 
-  
-
   if (!results) {
     return (
       <div className='flex flex-col justify-center items-center pt-10'>

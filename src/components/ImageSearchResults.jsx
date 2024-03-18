@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import PaginationButtons from './PaginationButtons';
 
 export default function ImageSearchResults({ results }) {
   return (
@@ -28,6 +28,9 @@ export default function ImageSearchResults({ results }) {
             </div>
           </div>
         ))}
+      </div>
+      <div className="px-44 py-40">
+        <PaginationButtons />
       </div>
     </div>
   );
