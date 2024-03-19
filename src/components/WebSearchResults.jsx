@@ -1,3 +1,5 @@
+import { Suspense } from "react"
+
 import Link from "next/link"
 import Parser from "html-react-parser"
 import PaginationButtons from "./PaginationButtons"
@@ -24,7 +26,9 @@ export default function WebSearchResults({results}) {
         </div>
       ))}
       <div className="px-44 py-40">
-        <PaginationButtons />
+        <Suspense>
+          <PaginationButtons />
+        </Suspense>
       </div>
     </div>
   )

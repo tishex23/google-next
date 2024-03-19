@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import Link from 'next/link';
 import PaginationButtons from './PaginationButtons';
 
@@ -30,7 +32,9 @@ export default function ImageSearchResults({ results }) {
         ))}
       </div>
       <div className="px-44 py-40">
-        <PaginationButtons />
+        <Suspense>
+          <PaginationButtons />
+        </Suspense>
       </div>
     </div>
   );
