@@ -4,6 +4,8 @@ import Link from "next/link";
 export default async function ImageSearchPage({searchParams}) {
   
   const startIndex = searchParams.start || '10';
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   
 
   const response = await fetch(
